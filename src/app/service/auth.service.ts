@@ -14,12 +14,12 @@ export class AuthService {
   ) {   }
 
   login(userLogin: UserLogin): Observable<UserLogin>{
-    return this.http.post<UserLogin>('https://apimnblog.herokuapp.com/swagger-ui/#/usuario-controller/PostUsingPOST', userLogin)
+    return this.http.post<UserLogin>('https://apimnblog.herokuapp.com/usuarios/logar', userLogin)
 
   }
 
   cadastrar(user: Usuario): Observable<Usuario>{
-    return this.http.post<Usuario>('https://apimnblog.herokuapp.com/swagger-ui/#/usuario-controller/AutenticationUsingPOST', user)
+    return this.http.post<Usuario>('https://apimnblog.herokuapp.com/usuarios/cadastrar', user)
 
   }
 }
