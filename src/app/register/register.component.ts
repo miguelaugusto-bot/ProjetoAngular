@@ -1,6 +1,7 @@
 import { AuthService } from './../service/auth.service';
 import { Usuario } from './../model/Usuario';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -14,7 +15,8 @@ export class RegisterComponent implements OnInit {
   tipoUsuario: string
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -38,6 +40,7 @@ export class RegisterComponent implements OnInit {
     else{
       this.authService.cadastrar(this.user).subscribe((resp: Usuario) =>{
         this.user = resp
+        this.router.navigate(['/login'])
         alert('feito')
 
       })

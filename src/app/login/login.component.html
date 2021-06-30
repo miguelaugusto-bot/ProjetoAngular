@@ -7,15 +7,15 @@
 
                     <div class="fomr-group">
                         <label for="user">Usuario</label>
-                        <input class="form-control" type="text" name="user" id="user" placeholder="Digite o Usuario">
+                        <input [(ngModel)]='userLogin.usuario' class="form-control" type="text" name="user" id="user" placeholder="Digite o Usuario">
                     </div>
                     <div class="fomr-group">
                         <label for="senha">Senha</label>
-                        <input class="form-control" type="password" name="senha" id="senha" placeholder="Digite a Senha">
+                        <input [(ngModel)]='userLogin.senha' class="form-control" type="password" name="senha" id="senha" placeholder="Digite a Senha">
                     </div>
 
                     <div class="d-flex justify-content-center pt-4">
-                        <button type="submit" class="btn btn-success">Entrar</button>
+                        <button type="submit" class="btn btn-success" (click)='entrar()'>Entrar</button>
                     </div>
 
                     <hr class="mt-5 mb-5">
