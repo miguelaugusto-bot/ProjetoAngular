@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MenuComponent } from './menu/menu.component';
+import { TemaComponent } from './tema/tema.component';
 
 const routes: Routes = [
 
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path: 'menu', component: MenuComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'home', component: HomeComponent}
+  {path: 'home', component: HomeComponent},
+  {path: 'tema', component: TemaComponent}
 ];
 
 @NgModule({
