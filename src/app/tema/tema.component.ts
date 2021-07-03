@@ -24,10 +24,13 @@ export class TemaComponent implements OnInit {
       alert('Sessão expirou')
       this.router.navigate(['/login'])
     }
+
+    this.findAllTemas()
   }
 
   findAllTemas(){
     this.temaService.getAllTema().subscribe((resp: Tema[])=>{
+      this.listaTemas = resp
 
     })
   }
@@ -36,6 +39,7 @@ export class TemaComponent implements OnInit {
     this.temaService.postTema(this.tema).subscribe((resp: Tema)=>{
     this.tema = resp
 
+    this.findAllTemas()
     this.tema = new Tema()
   })
   }
