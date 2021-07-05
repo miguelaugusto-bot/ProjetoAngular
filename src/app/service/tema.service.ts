@@ -15,6 +15,7 @@ export class TemaService {
   token = {
     headers: new HttpHeaders().set("Authorization", environment.token)
   }
+
   getAllTema(): Observable<Tema[]>{
     return this.http.get<Tema[]>('https://apimnblog.herokuapp.com/tema/all', this.token)
   }
@@ -27,8 +28,8 @@ export class TemaService {
     return this.http.post<Tema>('https://apimnblog.herokuapp.com/tema/add', tema, this.token)
   }
 
-  putTema(tema: Tema): Observable<Tema>{
-    return this.http.put<Tema>('https://apimnblog.herokuapp.com/tema/update', tema, this.token)
+  putTema(id: number, tema: Tema): Observable<Tema>{
+    return this.http.put<Tema>(`https://apimnblog.herokuapp.com/tema/update/${id}`, tema, this.token)
   }
 
   deleteTema(id: number){
