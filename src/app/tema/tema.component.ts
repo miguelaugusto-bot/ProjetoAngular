@@ -21,11 +21,13 @@ export class TemaComponent implements OnInit {
 
   ngOnInit() {
     if(environment.token == ''){
-      alert('Sessão expirou')
+      environment.token = ''
       this.router.navigate(['/login'])
-    }
-    console.log(environment.token)
+      alert('Sessão expirou')
+    }else{
+    this.temaService.refreshToken()
     this.findAllTemas()
+    }
   }
 
   findAllTemas(){

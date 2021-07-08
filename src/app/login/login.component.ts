@@ -1,3 +1,4 @@
+import { TemaService } from './../service/tema.service';
 import { environment } from './../../environments/environment.prod';
 import { Router } from '@angular/router';
 import { AuthService } from './../service/auth.service';
@@ -15,10 +16,12 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private auth: AuthService,
+    private temaService: TemaService,
     private router: Router
   ) { }
 
   ngOnInit(){
+    this.temaService.refreshToken()
     window.scroll(0,0)
   }
 

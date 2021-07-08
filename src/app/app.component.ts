@@ -1,3 +1,4 @@
+import { TemaService } from './service/tema.service';
 import { AuthService } from './service/auth.service';
 import { Component } from '@angular/core';
 
@@ -7,9 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  title: any;
   constructor(
     public auth: AuthService
   ){
-
   }
 }
