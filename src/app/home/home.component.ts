@@ -48,14 +48,12 @@ export class HomeComponent implements OnInit {
 
   getAllTemas(){
     this.temaService.getAllTema().subscribe((resp: Tema[])=>{
-      this.temaService.refreshToken()
       this.listaTema = resp
     })
   }
 
   findByIdTema(){
     this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema)=>{
-      this.temaService.refreshToken()
       this.tema = resp
     })
   }
@@ -72,7 +70,6 @@ export class HomeComponent implements OnInit {
     this.usuarioService.getByIdUser(this.idUser).subscribe((resp: Usuario)=>{
       this.temaService.refreshToken()
       this.usuario = resp
-      console.log(this.usuario.postagem)
     })
   }
 
